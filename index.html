@@ -198,7 +198,8 @@ if(n.length<2){er(fn,"Вкажіть, як до вас звертатися");ba
 if(c.replace(/[^0-9a-zA-Z@_]/g,"").length<5){er(fc,"Залиште нік у Telegram або номер телефону");bad=true}else er(fc);
 if(bad){Q("[aria-invalid=true]",f).focus();return}
 var b=Q("button",f);b.disabled=true;b.firstChild.textContent="Надсилаю... ";
-setTimeout(function(){Q("#okh").textContent="Дякую, "+n+"!";f.hidden=true;ok.hidden=false;ok.focus();b.disabled=false;b.firstChild.textContent="Надіслати заявку "},700);
+var done=function(){b.disabled=false;b.firstChild.textContent="Надіслати заявку "};
+fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({access_key:"87faa625-7e42-4fb8-9f89-4b523fefeaf2",subject:"Нова заявка з сайту: "+n,from_name:"Сайт портфоліо",name:n,"Контакт":c,"Послуга":f.elements["sv"].value,"Про проєкт":f.elements["msg"].value})}).then(function(r){return r.json()}).then(function(j){if(!j||!j.success)throw 0;Q("#okh").textContent="Дякую, "+n+"!";f.hidden=true;ok.hidden=false;ok.focus();done()}).catch(function(){done();er(fc,"Не вдалося надіслати. Спробуйте ще раз або напишіть на Freelancehunt")});
 });
 Q("#again").onclick=function(){f.reset();ok.hidden=true;f.hidden=false;fn.focus()};
 if(RM)return;
