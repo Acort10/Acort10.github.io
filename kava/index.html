@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Чорна Вода - обсмажувальня кави у Львові</title>
+<meta name="description" content="Свіжообсмажена кава зі Львова. Зерно з датою обсмаження, кав'ярня на Підвальній, доставка по Україні.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E9ECE4; --ink:#16211C; --cherry:#8E2433; --crema:#D9B77E; --steel:#5C6B63; --line:#C9CFC4;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 "Golos Text",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cherry);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:"Yeseva One",serif;font-size:24px;text-decoration:none}
+nav a{margin-left:26px;text-decoration:none;font-weight:500}
+nav a:hover{color:var(--cherry)}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:end;padding:64px 0 88px}
+.hero h1{font-family:"Yeseva One",serif;font-weight:400;font-size:clamp(46px,7vw,92px);line-height:.98;letter-spacing:-.01em}
+.hero p{max-width:30em;margin-top:24px;font-size:19px;color:var(--steel)}
+.btn{display:inline-block;margin-top:32px;padding:15px 26px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;border-radius:999px}
+.btn:hover{background:var(--cherry)}
+.ticket{background:var(--ink);color:var(--paper);border-radius:6px;padding:28px 30px;position:relative}
+.ticket:before,.ticket:after{content:"";position:absolute;left:-12px;top:50%;width:24px;height:24px;border-radius:50%;background:var(--paper);transform:translateY(-50%)}
+.ticket:after{left:auto;right:-12px}
+.ticket small{color:var(--crema);font-size:14px}
+.ticket .days{font-family:"Yeseva One",serif;font-size:88px;line-height:1;margin:6px 0}
+.ticket .row{display:flex;justify-content:space-between;border-top:1px dashed #3b4a42;padding-top:12px;margin-top:16px;font-size:15px}
+section{padding:88px 0;border-top:1px solid var(--line)}
+h2{font-family:"Yeseva One",serif;font-weight:400;font-size:clamp(34px,4.5vw,52px);line-height:1.05;margin-bottom:12px}
+.lead{color:var(--steel);max-width:34em;margin-bottom:44px}
+.beans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.bean{padding:28px 26px 32px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.bean:last-child{border-right:0}
+.bean h3{font-family:"Yeseva One",serif;font-weight:400;font-size:30px}
+.origin{color:var(--steel);font-size:15px}
+.notes{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.notes span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.scale{margin:14px 0 22px}
+.scale label{display:flex;justify-content:space-between;font-size:14px;color:var(--steel)}
+.bar{height:6px;background:var(--line);border-radius:3px;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--cherry);border-radius:3px}
+.buy{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.price{font-weight:700;font-size:20px}
+.add{border:2px solid var(--ink);background:none;padding:9px 18px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer}
+.add:hover{background:var(--ink);color:var(--paper)}
+.add.done{background:var(--cherry);border-color:var(--cherry);color:#fff}
+.cafe{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:12px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:500}
+.today{color:var(--cherry)}
+.sub{background:var(--crema);border-radius:6px;padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.sub h2{margin-bottom:8px}
+form{display:flex;flex-direction:column;gap:12px}
+input,select{font:inherit;padding:14px 16px;border:2px solid var(--ink);border-radius:8px;background:#fff8ec}
+.msg{font-weight:700;min-height:1.6em}
+footer{padding:40px 0 56px;color:var(--steel);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.cart{position:fixed;right:20px;bottom:20px;visibility:hidden;opacity:0;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:999px;font-weight:700;transform:translateY(120px);transition:transform .3s}
+.cart.show{transform:none;visibility:visible;opacity:1}
+@media (max-width:820px){
+  .hero,.cafe,.sub{grid-template-columns:1fr}
+  .beans{grid-template-columns:1fr}
+  .bean{border-right:0;border-bottom:1px solid var(--line)}
+  nav a:not(:last-child){display:none}
+  .sub{padding:32px 24px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#">Чорна Вода</a>
+  <nav><a href="#zerno">Зерно</a><a href="#kavyarnya">Кав'ярня</a><a href="#pidpyska">Підписка</a></nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Кава, яку обсмажили цього тижня</h1>
+    <p>Ми обсмажуємо зерно щовівторка невеликими партіями у Львові й відправляємо того ж дня. На кожній пачці дата, тож ви завжди знаєте, наскільки вона свіжа.</p>
+    <a class="btn" href="#zerno">Обрати зерно</a>
+  </div>
+  <div class="ticket" aria-live="polite">
+    <small>Остання партія</small>
+    <div class="days" id="days">2</div>
+    <div id="daysLabel">дні від обсмаження</div>
+    <div class="row"><span>Партія</span><span id="batch">№ 214</span></div>
+    <div class="row"><span>Наступна</span><span id="next">вівторок</span></div>
+  </div>
+</div>
+</div>
+
+<section id="zerno">
+<div class="wrap">
+  <h2>Зерно цього тижня</h2>
+  <p class="lead">Три сорти, які ми зараз обсмажуємо. Шкала показує кислотність і тіло, щоб було простіше обрати без дегустації.</p>
+  <div class="beans">
+    <article class="bean">
+      <h3>Ефіопія Гуджі</h3>
+      <div class="origin">Митата, 2100 м, мита обробка</div>
+      <div class="notes"><span>бергамот</span><span>персик</span><span>жасмин</span></div>
+      <div class="scale"><label>Кислотність <span>висока</span></label><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="scale"><label>Тіло <span>легке</span></label><div class="bar"><i style="width:35%"></i></div></div>
+      <div class="buy"><span class="price">420 грн / 250 г</span><button class="add" data-name="Ефіопія Гуджі">У кошик</button></div>
+    </article>
+    <article class="bean">
+      <h3>Колумбія Уїла</h3>
+      <div class="origin">Сан-Агустін, 1750 м, мита обробка</div>
+      <div class="notes"><span>карамель</span><span>червоне яблуко</span><span>какао</span></div>
+      <div class="scale"><label>Кислотність <span>середня</span></label><div class="bar"><i style="width:55%"></i></div></div>
+      <div class="scale"><label>Тіло <span>середнє</span></label><div class="bar"><i style="width:60%"></i></div></div>
+      <div class="buy"><span class="price">380 грн / 250 г</span><button class="add" data-name="Колумбія Уїла">У кошик</button></div>
+    </article>
+    <article class="bean">
+      <h3>Бразилія Серрадо</h3>
+      <div class="origin">Мінас-Жерайс, 1100 м, натуральна обробка</div>
+      <div class="notes"><span>горіх</span><span>молочний шоколад</span><span>тростинний цукор</span></div>
+      <div class="scale"><label>Кислотність <span>низька</span></label><div class="bar"><i style="width:25%"></i></div></div>
+      <div class="scale"><label>Тіло <span>щільне</span></label><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="buy"><span class="price">340 грн / 250 г</span><button class="add" data-name="Бразилія Серрадо">У кошик</button></div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="kavyarnya">
+<div class="wrap cafe">
+  <div>
+    <h2>Кав'ярня при обсмажувальні</h2>
+    <p class="lead">Вул. Підвальна, 9, Львів. Тут можна спробувати кожен сорт еспресо чи фільтром перед покупкою і подивитися, як працює ростер.</p>
+  </div>
+  <table class="hours" id="hours">
+    <tr data-d="1"><td>Понеділок</td><td>8:00 - 20:00</td></tr>
+    <tr data-d="2"><td>Вівторок (день обсмаження)</td><td>8:00 - 20:00</td></tr>
+    <tr data-d="3"><td>Середа</td><td>8:00 - 20:00</td></tr>
+    <tr data-d="4"><td>Четвер</td><td>8:00 - 20:00</td></tr>
+    <tr data-d="5"><td>П'ятниця</td><td>8:00 - 22:00</td></tr>
+    <tr data-d="6"><td>Субота</td><td>9:00 - 22:00</td></tr>
+    <tr data-d="0"><td>Неділя</td><td>9:00 - 18:00</td></tr>
+  </table>
+</div>
+</section>
+
+<section id="pidpyska">
+<div class="wrap">
+  <div class="sub">
+    <div>
+      <h2>Свіжа пачка раз на два тижні</h2>
+      <p>Підписка привозить новий сорт на ваш вибір Новою поштою. Можна пропустити доставку або скасувати в будь-який момент.</p>
+    </div>
+    <form id="subForm">
+      <input required name="email" type="email" placeholder="Ваш email" aria-label="Email">
+      <select name="grind" aria-label="Помел">
+        <option>У зернах</option><option>Помел для еспресо</option><option>Помел для фільтра</option><option>Помел для турки</option>
+      </select>
+      <button class="btn" style="margin-top:4px;border:0;cursor:pointer;font:inherit;font-weight:700">Оформити підписку</button>
+      <div class="msg" id="msg" role="status"></div>
+    </form>
+  </div>
+</div>
+</section>
+
+<div class="wrap">
+<footer>
+  <span>© Чорна Вода, Львів</span>
+  <span>Демо-проєкт</span>
+</footer>
+</div>
+<div class="cart" id="cart" role="status">Кошик: 0</div>
+
+<script>
+(function(){
+  const now=new Date(); const day=now.getDay();
+  const since=(day+5)%7;
+  document.getElementById('days').textContent=since;
+  const f=n=>{const a=n%10,b=n%100; if(a===1&&b!==11)return'день';if(a>=2&&a<=4&&(b<10||b>=20))return'дні';return'днів'};
+  document.getElementById('daysLabel').textContent=(since===0?'сьогодні обсмажили':f(since)+' від обсмаження');
+  const nextIn=(7-since)%7||7;
+  document.getElementById('next').textContent=nextIn===1?'завтра':'через '+nextIn+' '+f(nextIn);
+  const row=document.querySelector('#hours tr[data-d="'+day+'"]'); if(row)row.classList.add('today');
+})();
+let n=0; const cart=document.getElementById('cart');
+document.querySelectorAll('.add').forEach(b=>b.addEventListener('click',()=>{
+  n++; b.textContent='Додано'; b.classList.add('done');
+  cart.textContent='Кошик: '+n+' '+(n===1?'пачка':n<5?'пачки':'пачок'); cart.classList.add('show');
+}));
+document.getElementById('subForm').addEventListener('submit',e=>{
+  e.preventDefault(); document.getElementById('msg').textContent='Підписку оформлено. Перша пачка приїде після найближчого обсмаження.';
+});
+</script>
+</body>
+</html>

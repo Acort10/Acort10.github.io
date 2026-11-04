@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Артем Момот - сайти і Telegram-боти</title>
+<meta name="description" content="Роблю лендинги, сайти-візитки і Telegram-ботів для малого бізнесу. Швидко, з правками до результату.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F6;--navy:#13233F;--sun:#F2C230;--slate:#5B6B84;--line:#D3DAE5;--white:#fff}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--navy);font:400 17px/1.6 "Golos Text",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.me{font-weight:700}
+.status{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--slate)}
+.status i{width:9px;height:9px;border-radius:50%;background:#2BB673;box-shadow:0 0 0 4px rgba(43,182,115,.18)}
+.hero{padding:72px 0 96px}
+.hero h1{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(38px,6.4vw,82px);line-height:1.02;letter-spacing:-.02em;max-width:12em}
+.hl{background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.hero p{margin-top:26px;max-width:34em;font-size:19px;color:var(--slate)}
+.actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 26px;border-radius:12px;font-weight:700;text-decoration:none}
+.btn.main{background:var(--navy);color:#fff}
+.btn.main:hover{background:#21365C}
+.btn.ghost{border:2px solid var(--navy)}
+section{padding:88px 0;border-top:1px solid var(--line)}
+h2{font-family:Unbounded,sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,40px);margin-bottom:36px;letter-spacing:-.01em}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--white);border-radius:16px;padding:28px}
+.svc h3{font-size:20px;margin-bottom:8px}
+.svc p{color:var(--slate);font-size:16px}
+.svc .from{margin-top:18px;font-weight:700}
+.steps{padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.steps li{list-style:none;counter-increment:s;border-top:3px solid var(--navy);padding-top:16px}
+.steps li:before{content:counter(s);font-family:Unbounded,sans-serif;font-size:28px;display:block;margin-bottom:8px}
+.steps b{display:block;margin-bottom:4px}
+.steps span{color:var(--slate);font-size:16px}
+.work{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{text-decoration:none;display:block}
+.frame{aspect-ratio:16/11;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line);position:relative}
+.frame iframe{width:200%;height:200%;transform:scale(.5);transform-origin:0 0;border:0;pointer-events:none}
+.card h3{margin-top:16px;font-size:20px}
+.card p{color:var(--slate);font-size:16px}
+.card:hover .frame{border-color:var(--navy)}
+.contact{background:var(--navy);color:#fff;border-radius:24px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.contact h2{margin:0;color:#fff}
+.contact p{color:#AFC0DA;margin-top:10px}
+.contact .btn{background:var(--sun);color:var(--navy)}
+footer{padding:36px 0 56px;color:var(--slate);font-size:14px}
+@media (max-width:860px){
+  .services,.work{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .contact{padding:36px 26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="me">Артем Момот</span>
+  <span class="status"><i></i>Беру нові проєкти</span>
+</header>
+<div class="hero">
+  <h1>Сайти і Telegram-боти, які <span class="hl">приводять заявки</span></h1>
+  <p>Роблю лендинги, сайти-візитки і ботів для малого бізнесу: кав'ярень, майстрів, інтернет-магазинів. Перед стартом погоджуємо структуру, правки до результату, який вас влаштує.</p>
+  <div class="actions">
+    <a class="btn main" href="https://freelancehunt.com/freelancer/Acort.html">Обговорити проєкт</a>
+    <a class="btn ghost" href="#roboty">Подивитися роботи</a>
+  </div>
+</div>
+</div>
+
+<section>
+<div class="wrap">
+  <h2>Що я роблю</h2>
+  <div class="services">
+    <div class="svc"><h3>Лендинг або сайт-візитка</h3><p>Адаптив під телефон, форма заявки з відправкою в Telegram, швидке завантаження і базове SEO.</p><div class="from">від 3 000 грн, 3-5 днів</div></div>
+    <div class="svc"><h3>Telegram-бот</h3><p>Запис клієнтів, прийом замовлень, автоворонки з повідомленнями за таймером, адмінка для текстів.</p><div class="from">від 4 000 грн, 5-7 днів</div></div>
+    <div class="svc"><h3>Правки й автоматизація</h3><p>Виправлю сайт, що зламався, налаштую кросспостинг, зберу дані з сайту в таблицю.</p><div class="from">від 500 грн, 1-2 дні</div></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2>Як проходить робота</h2>
+  <ol class="steps">
+    <li><b>Бриф</b><span>Ви розповідаєте задачу, я ставлю уточнювальні питання.</span></li>
+    <li><b>Структура</b><span>Показую план сторінки або сценарій бота на погодження.</span></li>
+    <li><b>Розробка</b><span>Роблю і надсилаю проміжний результат, щоб ви бачили прогрес.</span></li>
+    <li><b>Запуск</b><span>Вношу правки, розміщую на хостингу і передаю доступи.</span></li>
+  </ol>
+</div>
+</section>
+
+<section id="roboty">
+<div class="wrap">
+  <h2>Роботи</h2>
+  <div class="work">
+    <a class="card" href="kava/">
+      <div class="frame"><iframe src="kava/" title="Лендинг обсмажувальні кави" loading="lazy" tabindex="-1"></iframe></div>
+      <h3>Чорна Вода, обсмажувальня кави</h3>
+      <p>Лендинг з каталогом зерна, кошиком, графіком роботи і підпискою. Лічильник днів від обсмаження оновлюється сам.</p>
+    </a>
+    <a class="card" href="nails/">
+      <div class="frame"><iframe src="nails/" title="Сайт майстра манікюру" loading="lazy" tabindex="-1"></iframe></div>
+      <h3>Студія манікюру</h3>
+      <p>Сайт-візитка з цінами і онлайн-записом: послуга, день, вільний час і вибір відтінку покриття.</p>
+    </a>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="contact">
+    <div><h2>Є задача?</h2><p>Напишіть на Freelancehunt, відповім протягом години.</p></div>
+    <a class="btn" href="https://freelancehunt.com/freelancer/Acort.html">Написати на Freelancehunt</a>
+  </div>
+</div>
+</section>
+
+<div class="wrap"><footer>© Артем Момот</footer></div>
+</body>
+</html>
